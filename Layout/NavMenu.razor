@@ -1,0 +1,47 @@
+﻿@* istanzio un menù con varie scelte *@
+
+<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
+    <nav class="flex-column"> @*  lo istanzio scorribile a colonnne *@
+        @* istanzio la " Home " *@
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="home_img" aria-hidden="true"></span> Home
+            </NavLink>
+        </div>
+
+        @* istanzio la page " cerca " *@
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="cerca">
+                <span class="cerca_img" aria-hidden="true"></span> Cerca
+            </NavLink>
+        </div>
+
+        @* istanzio la page " list " *@
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="list">
+                <span class="info_img" aria-hidden="true"></span> Info Radio
+            </NavLink>
+        </div>
+
+        @* istanzio la page " infoProgrammatore " *@
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="infoProgrammatore">
+                <span class="personalInfo_img" aria-hidden="true"></span> info Personali
+            </NavLink>
+        </div>
+    </nav>
+</div>
+
+
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}
+

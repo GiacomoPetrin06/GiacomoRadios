@@ -1,0 +1,195 @@
+﻿@page "/list"
+
+@using GiacomoRadios.Code;
+@inject RadioService RadioService
+@inject IJSRuntime JSRuntime
+
+<label class="switch">
+    <input type="checkbox" @onchange="ChangeTheme">
+    <span class="slider"></span>
+</label>
+<p></p>
+
+<div>
+    <label>
+        Password (almeno 8 caratteri):
+    </label>
+    <input class="btn-ScriviPassword" type="password" id="password" name="password" minlength="8" required />
+</div>
+<button class="btn-VerificaPassword" @onclick="ControllaPassword">
+    Verifica Password
+</button>
+
+<div id="contenuto-protetto" hidden="@(!isUserAuthenticated)">
+    <div>
+        <p>Queste sono tutte le radio disponibili</p>
+    </div>
+
+    <select class="btn_CercaGeneri" @onchange=" Ricerca">
+        @foreach (var genere in tipiGeneri)
+        {
+            <option value=@genere>@genere</option>
+        }
+    </select>
+
+    <button class="btn-preferiti" @onclick="() => ViewPreferiti(Preferiti)">Visualizza Preferiti</button>
+
+    @if (ListViewRadio != null && ListViewRadio.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>n°</th>
+                    <th>Nome</th>
+                    <th>Genere</th>
+                    <th>UrlAudio</th>
+                    <th></th>
+                    <th>Preferiti</th>
+                    <th></th>
+                    <th></th>
+                    <th>Logo</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var radio in ListViewRadio)
+                {
+                    <tr>
+                        <td>@radio.Id</td>
+                        <td>@radio.Title</td>
+                        <td>@radio.Genere</td>
+                        <td>@radio.UrlAudio</td>
+                        <td><span class="@caricaImgCuore(radio)"></span></td>
+                        <td><button class="btn-preferiti" @onclick="() => AddToPreferiti(radio)" style="align-self">Preferiti</button></td>
+                        <td> </td>
+                        <td> </td>
+                        <td><img src="@radio.ImgIcona" alt="@radio.Title" style="max-width: 100px;" /></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>Nessuna radio trovata.</p>
+    }
+</div>
+
+@code {
+    private List<Radio> Radios { get; set; } = new List<Radio>(); // lista di radio
+    private List<Radio> ListViewRadio { get; set; } = new List<Radio>(); // lista di radio che visualizzo
+    private List<string> tipiGeneri = new List<string>(); // lista dei tipi di generi
+    private List<Radio> Preferiti { get; set; } = new List<Radio>(); // lista di radio preferite dall'utente
+
+    protected override async Task OnInitializedAsync() // metodo per inizializzare le variabili sopra citate
+    {
+        if (RadioService != null)
+        {
+            Radios = await RadioService.GetRadios();
+            ListViewRadio = Radios;
+            caricaGeneri();
+        }
+        else
+        {
+            Console.WriteLine("RadioService is null");
+        }
+    }
+
+    public void Ricerca(ChangeEventArgs e) // metodo che Ricercare
+    {
+        if (ListViewRadio == null || !ListViewRadio.Any())
+        {
+            ListViewRadio = new List<Radio>();
+        }
+        if (e.Value.ToString() == "TUTTE")
+        {
+            ListViewRadio = Radios;
+            return;
+        }
+        ListViewRadio = Radios.FindAll(x => x.Genere == e.Value.ToString());
+    }
+
+    public void caricaGeneri() // metodo che controlla i generi presenti, e ne aggiunge nuovi nel caso non siano già presenti
+    {
+        tipiGeneri.Add("TUTTE");
+        foreach (var radio in ListViewRadio)
+        {
+            if (radio.Genere != tipiGeneri.Find(x => x == radio.Genere))
+            {
+                tipiGeneri.Add(radio.Genere);
+            }
+        }
+    }
+
+    public void AddToPreferiti(Radio radio) // metodo che aggiunge una radio all'elenco delle preferite
+    {
+        if (!Preferiti.Contains(radio))
+        {
+            Preferiti.Add(radio);
+        }
+        else
+        {
+            Preferiti.RemoveAt(Preferiti.FindIndex(x => x == radio));
+        }
+    }
+
+    private bool IsViewPreferitiOn = false;
+    public void ViewPreferiti(List<Radio> preferiti)
+    {
+        IsViewPreferitiOn = !IsViewPreferitiOn;
+        ListViewRadio = IsViewPreferitiOn ? preferiti : Radios;
+    }
+
+    public string caricaImgCuore(Radio radio) // metodo per ottenere la classe del cuore
+    {
+        return Preferiti.Contains(radio) ? "heart-icon filled" : "heart-icon";
+    }
+
+    private string passwordCorretta = "giacomo";
+    private bool isUserAuthenticated = false;
+    private async Task ControllaPassword()
+    {
+        string password = await JSRuntime.InvokeAsync<string>("eval", "document.getElementById('password').value");
+
+        if (password == passwordCorretta)
+        {
+            // La password è corretta, imposta l'utente come autenticato
+            isUserAuthenticated = true;
+        }
+        else
+        {
+            // La password non è corretta, imposta l'utente come non autenticato
+            isUserAuthenticated = false;
+        }
+    }
+
+    private async Task ChangeTheme(int theme)
+    {
+        switch (theme)
+        {
+            case 1:
+                await JSRuntime.InvokeVoidAsync("changeCss", "css/app.css");
+                break;
+
+            case 2:
+                await JSRuntime.InvokeVoidAsync("changeCss", "css/appDark.css");
+                break;
+
+            case 3:
+                break;
+        }
+    }
+
+    private async Task ChangeTheme(ChangeEventArgs e)
+    {
+        bool isChecked = (bool)e.Value;
+        if (isChecked)
+        {
+            await JSRuntime.InvokeVoidAsync("changeCss", "css/appDark.css");
+        }
+        else
+        {
+            await JSRuntime.InvokeVoidAsync("changeCss", "css/app.css");
+        }
+    }
+}

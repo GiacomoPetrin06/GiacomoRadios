@@ -1,0 +1,60 @@
+﻿@page "/infoProgrammatore"
+
+@using GiacomoRadios.Code;
+@using System;
+@using System.Media;
+@inject RadioService RadioService
+@inject IJSRuntime JSRuntime
+@inject HttpClient http;
+
+<PageTitle>CercaRadio</PageTitle>
+
+<label class="switch">
+    <input type="checkbox" @onchange="ChangeTheme">
+    <span class="slider"></span>
+</label>
+<p></p>
+
+
+<div class="card">
+    <div class="card-header">
+        <h2>Informazioni Programmatore</h2>
+    </div>
+    <div class="card-body">
+        @foreach (var dato in DatiProgrammatore)
+        {
+            <p>@dato</p>
+        }
+    </div>
+</div>
+
+@code {
+    private List<string> DatiProgrammatore { get; set; } = new List<string>();
+
+    protected override void OnInitialized()
+    {
+        // Aggiungi qui i tuoi dati
+        DatiProgrammatore.Add("Nome: Giacomo");
+        DatiProgrammatore.Add("Età: 18");
+        DatiProgrammatore.Add("Lavoro: Sviluppatore software e App");
+        DatiProgrammatore.Add("Esperienza: 4° superiore");
+        DatiProgrammatore.Add("Linguaggi: C#, C, C++, Java, JavaScript, HTML, CSS");
+        DatiProgrammatore.Add("Mail: giacomodegiacomo06@gmail.com");
+        DatiProgrammatore.Add("Telefono: 380 89 85 885");
+        DatiProgrammatore.Add("Scuola: IIS Einaudi Scarpa");
+        DatiProgrammatore.Add("Via: Caerano DI San Marco, Via Mazzini");
+    }
+
+    private async Task ChangeTheme(ChangeEventArgs e)
+    {
+        bool isChecked = (bool)e.Value;
+        if (isChecked)
+        {
+            await JSRuntime.InvokeVoidAsync("changeCss", "css/appDark.css");
+        }
+        else
+        {
+            await JSRuntime.InvokeVoidAsync("changeCss", "css/app.css");
+        }
+    }
+}

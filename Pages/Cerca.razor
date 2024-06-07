@@ -1,0 +1,169 @@
+﻿@page "/cerca"
+
+@using GiacomoRadios.Code;
+@using System;
+@using System.Media;
+@inject RadioService RadioService
+@inject IJSRuntime JSRuntime
+@inject HttpClient http;
+
+<PageTitle>CercaRadio</PageTitle>
+
+<label class="switch">
+    <input type="checkbox" @onchange="ChangeTheme">
+    <span class="slider"></span>
+</label>
+<p></p>
+
+<input class="btn-CercaGeneri" type="text" id="mySearch" @oninput="FilterRadios" placeholder="Cerca radio..." title="Type in a name">
+
+<div class="radio-container">
+    @foreach (var radio in ListViewRadio)
+    {
+        <div class="radio-card">
+            <img style="border:1px solid white; " src="@radio.ImgIcona" alt="@radio.Title" />
+
+            <h4 class="radio-card-Text" style="border:1px solid white;" title="@radio.Title">
+                @radio.Title;
+            </h4>
+
+            <h5 class="radio-card-Text" style="color:@GetGenereColor(radio.Genere)">
+                @radio.Genere
+            </h5>
+
+            <button class="btn-play" @onclick="() => PlayPauseRadio(radio)">
+                @(IsPlay(radio) ? "Pause" : "Play")
+            </button>
+        </div>
+    }
+</div>
+
+<script>
+    window.changeCss = function (newSource) {
+        var css = document.getElementById('style');
+        css.href = newSource;
+    };
+</script>
+
+@code {
+    // variabili
+    private List<Radio> ListRadio { get; set; } = new List<Radio>(); // lista di radio
+    private List<Radio> ListViewRadio { get; set; } = new List<Radio>(); // lista di radio in visualizzazione
+    private List<Radio> Preferiti { get; set; } = new List<Radio>(); // lista di radio preferite dall'utente
+    private Radio currentRadio = new Radio(); // la radio attualmente in riproduzione
+
+    private List<string> tipiGeneri = new List<string>(); // lista dei tipi di generi
+
+    // metodi / funzioni
+    protected override async Task OnInitializedAsync() // metodo per inizializzare le variabili sopra citate
+    {
+        if (RadioService != null)
+        {
+            ListRadio = await RadioService.GetRadios();
+            ListViewRadio = new List<Radio>();
+        }
+        else
+        {
+            Console.WriteLine("RadioService is null");
+        }
+    }
+
+    private async Task PlayPauseRadio(Radio radio)
+    {
+        currentRadio = radio;
+        switch (await IsPlaying(radio))
+        {
+            case true:
+                await PauseAudio();
+                break;
+
+            case false:
+                await PlayAudio();
+                break;
+        }
+    }
+
+    private async Task PlayAudio()
+    {
+        // Imposta la sorgente audio e avvia la riproduzione
+        await JSRuntime.InvokeVoidAsync("eval", $"document.getElementById('radioPlayer').load()");
+        await JSRuntime.InvokeVoidAsync("eval", $"document.getElementById('radioPlayer').play()");
+    }
+
+    private async Task PauseAudio()
+    {
+        // Metti in pausa la riproduzione audio
+        await JSRuntime.InvokeVoidAsync("eval", $"document.getElementById('radioPlayer').pause();");
+        currentRadio = new Radio();
+    }
+
+    private async Task<bool> IsPlaying(Radio radio)
+    {
+        return !await IsPaused(radio);
+    }
+
+    private bool IsPlay(Radio radio)
+    {
+        return currentRadio.Id == radio.Id && !string.IsNullOrEmpty(radio.UrlAudio);
+    }
+
+    private async Task<bool> IsPaused(Radio radio)
+    {
+        try
+        {
+            // Start the task.
+            var paused = await JSRuntime.InvokeAsync<bool>("eval", "document.getElementById('radioPlayer').paused");
+
+            // Await the task.
+            return paused;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+            return true; // Restituisci true se c'è un errore, per considerare la radio in pausa
+        }
+    }
+
+    private async Task ChangeTheme(ChangeEventArgs e)
+    {
+        bool isChecked = (bool)e.Value;
+        if (isChecked)
+        {
+            await JSRuntime.InvokeVoidAsync("changeCss", "css/appDark.css");
+        }
+        else
+        {
+            await JSRuntime.InvokeVoidAsync("changeCss", "css/app.css");
+        }
+    }
+
+    private string GetGenereColor(string genere)
+    {
+        return genereColors.ContainsKey(genere) ? genereColors[genere] : "transparent";
+    }
+
+    // colori per i generi
+    private Dictionary<string, string> genereColors = new Dictionary<string, string>
+    {
+        { "Popolare", "orange" },
+        { "Popolare Italiana", "brown" },
+        { "Popolare 70 80", "yellow" },
+        { "Notiziario", "blue" },
+        { "ROCK", "red"},
+        { "REGGAETON", "darkred"},
+        { "Musica Classica", "green"},
+        { "POP", "lightblue"},
+        { "FUNK", "pink"},
+        { "JAZZ 70 80", "purple" },
+        { "QUIZ 70 80", "gray" }
+    };
+
+    private void FilterRadios(ChangeEventArgs e)
+    {
+        var filter = e.Value.ToString().ToUpper();
+        ListViewRadio = ListRadio
+            .Where(r => r.Title.ToUpper().Contains(filter))
+            .ToList();
+    }
+}
+

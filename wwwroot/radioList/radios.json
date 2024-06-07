@@ -1,0 +1,359 @@
+[
+  {
+    "Id": "1",
+    "Title": "Radio Virgin",
+    "UrlAudio": "http://icecast.unitedradio.it/Virgin.mp3",
+    "Genere": "ROCK",
+    "ImgIcona": "https://static.mytuner.mobi/media/tvos_radios/tu4nvfesmjuf.png"
+  },
+  {
+    "Id": "2",
+    "Title": "Radio RTL-102.5",
+    "UrlAudio": "https://streamingv2.shoutcast.com/rtl-1025",
+    "Genere": "Popolare",
+    "ImgIcona": "https://static.mytuner.mobi/media/tvos_radios/UWUuuy57sW.png"
+  },
+  {
+    "Id": "3",
+    "Title": "Radio RTL-102.5 BEST",
+    "UrlAudio": "https://streamingv2.shoutcast.com/rtl-1025-best",
+    "Genere": "Popolare",
+    "ImgIcona": "https://static.mytuner.mobi/media/tvos_radios/wYBJZXPMxh.png"
+  },
+  {
+    "Id": "4",
+    "Title": "Radio RTL-102.5 GROOVE",
+    "UrlAudio": "https://streamingv2.shoutcast.com/rtl-1025-broandsis",
+    "Genere": "Popolare",
+    "ImgIcona": "https://static.mytuner.mobi/media/tvos_radios/peTbvJHFM2.png"
+  },
+  {
+    "Id": "5",
+    "Title": "Radio KISS KISS",
+    "UrlAudio": "http://ice07.fluidstream.net:8080/KissKiss.mp3",
+    "Genere": "Popolare",
+    "ImgIcona": "https://static.mytuner.mobi/media/tvos_radios/R6DyE2LEgJ.jpg"
+  },
+  {
+    "Id": "6",
+    "Title": "Radio KISS KISS Italia",
+    "UrlAudio": "https://kisskiss.fluidstream.eu/KKItalia.mp3",
+    "Genere": "Popolare Italiana",
+    "ImgIcona": "https://static.mytuner.mobi/media/tvos_radios/76QzcCMb3h.png"
+  },
+  {
+    "Id": "7",
+    "Title": "Radio KISS KISS Napoli",
+    "UrlAudio": "http://ice08.fluidstream.net/KKNapoli.aac",
+    "Genere": "Popolare",
+    "ImgIcona": "https://static.mytuner.mobi/media/tvos_radios/ygtcKLbHUB.png"
+  },
+  {
+    "Id": "8",
+    "Title": "Rai Radio 1",
+    "UrlAudio": "http://icestreaming.rai.it/1.mp3",
+    "Genere": "Notiziario",
+    "ImgIcona": "https://static.mytuner.mobi/media/tvos_radios/NQZv9rGMW8.jpg"
+  },
+  {
+    "Id": "9",
+    "Title": "Rai Radio 2",
+    "UrlAudio": "http://icestreaming.rai.it/2.mp3",
+    "Genere": "ROCK",
+    "ImgIcona": "https://static.mytuner.mobi/media/tvos_radios/4MQy4EPAC9.png"
+  },
+  {
+    "Id": "10",
+    "Title": "Rai Radio 3",
+    "UrlAudio": "http://icestreaming.rai.it/3.mp3",
+    "Genere": "Musica Classica",
+    "ImgIcona": "https://static.mytuner.mobi/media/tvos_radios/S37xWnZthj.png"
+  },
+  {
+    "Id": "11",
+    "Title": "Rai Radio Isoradio",
+    "UrlAudio": "http://icestreaming.rai.it/6.mp3",
+    "Genere": "Notiziario",
+    "ImgIcona": "https://static.mytuner.mobi/media/tvos_radios/e3DfpnHqhC.png"
+  },
+  {
+    "Id": "12",
+    "Title": "Rai Radio GrParlamento",
+    "UrlAudio": "http://icestreaming.rai.it/7.mp3",
+    "Genere": "Notiziario",
+    "ImgIcona": "https://static.mytuner.mobi/media/tvos_radios/XBbtL2j3sT.jpg"
+  },
+  {
+    "Id": "13",
+    "Title": "RMC Radio Monte Carlo X",
+    "UrlAudio": "http://edge.radiomontecarlo.net/RMC.mp3",
+    "Genere": "Notiziario",
+    "ImgIcona": "https://static.mytuner.mobi/media/tvos_radios/p5ugpgUxGM.png"
+  },
+  {
+    "Id": "14",
+    "Title": "Radio Marte X",
+    "UrlAudio": "http://onair18.xdevel.com:8212/",
+    "Genere": "POP",
+    "ImgIcona": "https://static.mytuner.mobi/media/radios-150px/755/radio-marte.003f3162.png"
+  },
+  {
+    "Id": "15",
+    "Title": "Radio Ibiza X",
+    "UrlAudio": "http://onair11.xdevel.com:9990/",
+    "Genere": "POP",
+    "ImgIcona": "https://static.mytuner.mobi/media/radios-150px/fQEEEFuWMR.png"
+  },
+  {
+    "Id": "16",
+    "Title": "Radio Norba X",
+    "UrlAudio": "http://onair11.xdevel.com:8024",
+    "Genere": "POP",
+    "ImgIcona": "https://static.mytuner.mobi/media/radios-150px/DtYNBhAwdD.png"
+  },
+  {
+    "Id": "17",
+    "Title": "Radio LifeGate X",
+    "UrlAudio": "http://onair11.xdevel.com:8002/",
+    "Genere": "Notiziario",
+    "ImgIcona": "https://static.mytuner.mobi/media/radios-150px/CATSUYLFGZ.png"
+  },
+  {
+    "Id": "18",
+    "Title": "Radio Amore Campania X",
+    "UrlAudio": "http://onair11.xdevel.com:8002/",
+    "Genere": "Popolare",
+    "ImgIcona": "https://static.mytuner.mobi/media/radios-150px/mBweynN25s.png"
+  },
+  {
+    "Id": "19",
+    "Title": "Radio Giornale ",
+    "UrlAudio": "https://gr.fluidstream.eu/gr1.mp3",
+    "Genere": "Notiziario",
+    "ImgIcona": "https://static.mytuner.mobi/media/radios-150px/vct5wdv22w5v.png"
+  },
+  {
+    "Id": "20",
+    "Title": "Radio Sportiva",
+    "UrlAudio": "https://sportiva.inmystream.it/stream/sportiva",
+    "Genere": "Notiziario",
+    "ImgIcona": "https://static.mytuner.mobi/media/tvos_radios/FpJKGBypBB.png"
+  },
+  {
+    "Id": "21",
+    "Title": "Radio MANA' MANA' SPORT",
+    "UrlAudio": "https://stream10.xdevel.com/audio2s975363-2142/stream/icecast.audio",
+    "Genere": "Notiziario",
+    "ImgIcona": "https://myradioonline.it/public/uploads/radio_img/radio-mana-mana-sport/play_250_250.webp"
+  },
+  {
+    "Id": "22",
+    "Title": "Radio news 24 Diretta",
+    "UrlAudio": "https://stream6.xdevel.com/audio6s975889-649/stream/icecast.audio",
+    "Genere": "Notiziario",
+    "ImgIcona": "https://static.mytuner.mobi/media/radios-150px/ge3quaftymtk.png"
+  },
+  {
+    "Id": "23",
+    "Title": "Radio Centro Tuono Sport",
+    "UrlAudio": "https://streaming.centrosuono.com:8443/cssport.mp3",
+    "Genere": "Notiziario",
+    "ImgIcona": "https://myradioonline.it/public/uploads/radio_img/centro-suono-sport/play_250_250.webp"
+  },
+  {
+    "Id": "24",
+    "Title": "Radio Subasio",
+    "UrlAudio": "https://icy.unitedradio.it/Subasio.mp3",
+    "Genere": "Popolare Italiana",
+    "ImgIcona": "https://myradioonline.it/public/uploads/radio_img/radio-subasio/play_250_250.webp"
+  },
+  {
+    "Id": "25",
+    "Title": "Radio Zeta Italiana X",
+    "UrlAudio": "http://shoutcast.rtl.it:3030/stream",
+    "Genere": "Popolare Italiana",
+    "ImgIcona": "https://static.mytuner.mobi/media/radios-150px/rp6ru8hVmA.jpg"
+  },
+  {
+    "Id": "26",
+    "Title": "Radio 70-80",
+    "UrlAudio": "https://nr8.newradio.it:19574/stream",
+    "Genere": "Popolare 70 80",
+    "ImgIcona": "https://myradioonline.it/public/uploads/radio_img/70-80-it/play_250_250.webp"
+  },
+  {
+    "Id": "27",
+    "Title": "Radio Lady",
+    "UrlAudio": "https://onair22.xdevel.com/proxy/ladyradio?mp=/;stream/;",
+    "Genere": "Popolare Italiana",
+    "ImgIcona": "https://static.mytuner.mobi/media/radios-150px/8fHrvNHfaT.png"
+  },
+  {
+    "Id": "28",
+    "Title": "Radio LatteMiele",
+    "UrlAudio": "https://sr15.inmystream.it/stream/lattemiele",
+    "Genere": "Popolare Italiana",
+    "ImgIcona": "https://static.mytuner.mobi/media/radios-150px/Mz6B5mYMMT.png"
+  },
+  {
+    "Id": "29",
+    "Title": "Radio Bruno",
+    "UrlAudio": "https://stream7.xdevel.com/audio4s975355-396/stream/icecast.audio",
+    "Genere": "Popolare",
+    "ImgIcona": "https://static.mytuner.mobi/media/radios-150px/KYkQXfMpk7.png"
+  },
+  {
+    "Id": "30",
+    "Title": "Radio Manila",
+    "UrlAudio": "https://stream15.top-ix.org:8000/radiomanila",
+    "Genere": "Popolare",
+    "ImgIcona": "https://static.mytuner.mobi/media/radios-150px/qzujfrbhdzgx.png"
+  },
+  {
+    "Id": "31",
+    "Title": "Radio JukeBox",
+    "UrlAudio": "https://stream15.top-ix.org/radiojukebox",
+    "Genere": "Popolare",
+    "ImgIcona": "https://static.mytuner.mobi/media/radios-150px/bVhFgvSAkC.png"
+  },
+  {
+    "Id": "32",
+    "Title": "Radio Party Groove",
+    "UrlAudio": "https://stream15.top-ix.org/partygroove",
+    "Genere": "FUNK",
+    "ImgIcona": "https://static.mytuner.mobi/media/radios-150px/p9FR4ARFag.jpg"
+  },
+  {
+    "Id": "33",
+    "Title": "Radio Romeo e Juliet",
+    "UrlAudio": "https://onair7.xdevel.com/proxy/xautocloud_vovi_2030?mp=/;stream/;",
+    "Genere": "REGGAETON",
+    "ImgIcona": "https://static.mytuner.mobi/media/radios-150px/Ln7Rkq4BXM.png"
+  },
+  {
+    "Id": "34",
+    "Title": "Radio Gold",
+    "UrlAudio": "https://ad1.xdevel.com/radiogoldal",
+    "Genere": "Popolare Italiana",
+    "ImgIcona": "https://myradioonline.it/public/uploads/radio_img/radio-gold/play_250_250.webp"
+  },
+  {
+    "Id": "35",
+    "Title": "Radio Città Aperta",
+    "UrlAudio": "https://be.server89.com/8020/stream",
+    "Genere": "ROCK",
+    "ImgIcona": "https://myradioonline.it/public/uploads/radio_img/radio-citta-aperta/play_250_250.webp"
+  },
+  {
+    "Id": "36",
+    "Title": "Radio Popolare",
+    "UrlAudio": "https://livex.radiopopolare.it/radiopop2",
+    "Genere": "Popolare",
+    "ImgIcona": "https://static.mytuner.mobi/media/radios-150px/jHDQFrrXp9.jpg"
+  },
+  {
+    "Id": "37",
+    "Title": "Radio Globo",
+    "UrlAudio": "https://globo.newradio.it/globorm64",
+    "Genere": "Popolare",
+    "ImgIcona": "https://static.mytuner.mobi/media/radios-150px/ddC3cD6G2g.jpg"
+  },
+  {
+    "Id": "38",
+    "Title": "Radio Piterpan",
+    "UrlAudio": "https://ice01.fluidstream.net/piterpan",
+    "Genere": "Popolare",
+    "ImgIcona": "https://static.mytuner.mobi/media/radios-150px/142/radio-piterpan.db9a02ec.png"
+  },
+  {
+    "Id": "39",
+    "Title": "Radio Cecchetto",
+    "UrlAudio": "https://eu10.fastcast4u.com:3420/;",
+    "Genere": "POP",
+    "ImgIcona": "https://static.mytuner.mobi/media/radios-150px/QpUbYQknbu.png"
+  },
+  {
+    "Id": "40",
+    "Title": "Radio Gelosa",
+    "UrlAudio": "https://ice01.fluidstream.net/gelosa",
+    "Genere": "Popolare",
+    "ImgIcona": "https://static.mytuner.mobi/media/radios-150px/144/radio-gelosa.2233aa1e.png"
+  },
+  {
+    "Id": "41",
+    "Title": "Radio Studio Nord",
+    "UrlAudio": "https://nr6.newradio.it:19104/stream",
+    "Genere": "Popolare",
+    "ImgIcona": "https://static.mytuner.mobi/media/radios-150px/FKtu6Szqya.png"
+  },
+  {
+    "Id": "42",
+    "Title": "Radio Romanista",
+    "UrlAudio": "https://romanista.newradio.it/stream",
+    "Genere": "Popolare",
+    "ImgIcona": "https://static.mytuner.mobi/media/radios-150px/5QYhpRTgvA.png"
+  },
+  {
+    "Id": "43",
+    "Title": "Radio SudTirol Live",
+    "UrlAudio": "https://ice.creacast.com/sudtirol1a",
+    "Genere": "POP",
+    "ImgIcona": "https://static.mytuner.mobi/media/radios-150px/HfR3NYBLnf.png"
+  },
+  {
+    "Id": "44",
+    "Title": "Radio Monte Carlo 2",
+    "UrlAudio": "https://stream.rcs.revma.com/fxp289cp81uvv",
+    "Genere": "Popolare",
+    "ImgIcona": "https://play-lh.googleusercontent.com/llbJL6wBSHtgydPkvccUZuLSzEqjr2GCPLizmSxZwcA8L-YqIkB1G6zBSi6lCPtTNFs"
+  },
+  {
+    "Id": "45",
+    "Title": "Radio Punto Zero",
+    "UrlAudio": "https://stream9.xdevel.com/audio0s976836-1615/stream/icecast.audio",
+    "Genere": "JAZZ",
+    "ImgIcona": "https://static.mytuner.mobi/media/radios-150px/xPAbgpWEdR.png"
+  },
+  {
+    "Id": "46",
+    "Title": "Radio Ciccio Riccio",
+    "UrlAudio": "https://stream5.xdevel.com/audio0s975942-758/stream/icecast.audio",
+    "Genere": "Notiziario",
+    "ImgIcona": "https://static.mytuner.mobi/media/radios-150px/XGB6tCvvaE.png"
+  },
+  {
+    "Id": "40",
+    "Title": "Radio Marilù",
+    "UrlAudio": "https://ice02.fluidstream.net/marilu.mp3?time=1716991974019",
+    "Genere": "ROCK",
+    "ImgIcona": "https://radio-in-diretta.com/files/styles/media/public/logo/radio-marilu.jpg?itok=NMJtPE-x"
+  },
+  {
+    "Id": "47",
+    "Title": "Radio Mater",
+    "UrlAudio": "https://radiocast.cloud/radio/8000/radio.mp3?time=1716992019943",
+    "Genere": "Popolare",
+    "ImgIcona": "https://static.mytuner.mobi/media/radios-150px/CcDReWHpBW.png"
+  },
+  {
+    "Id": "48",
+    "Title": "Radio Radicale",
+    "UrlAudio": "https://live.radioradicale.it/live.mp3?time=1716992936271",
+    "Genere": "QUIZ",
+    "ImgIcona": "https://static.mytuner.mobi/media/radios-150px/bJdbnMmkxP.png"
+  },
+  {
+    "Id": "49",
+    "Title": "Radio +39 X",
+    "UrlAudio": "https://sr7.inmystream.it/proxy/antonio?mp=/stream",
+    "Genere": "Popolare",
+    "ImgIcona": "https://www.radio.fr/images/broadcasts/ce/0c/188686/1/c300.png"
+  },
+  {
+    "Id": "50",
+    "Title": "Radio Stella",
+    "UrlAudio": "https://stream6.xdevel.com/audio0s976787-1558/stream/icecast.audio",
+    "Genere": "Popolare",
+    "ImgIcona": "https://static.mytuner.mobi/media/radios-150px/sgyv3anuq3g8.png"
+  }
+]
