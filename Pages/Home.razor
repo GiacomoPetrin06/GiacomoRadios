@@ -174,41 +174,76 @@
         ListViewRadio = ListRadio.FindAll(x => x.Genere == e.Value.ToString());
     }
 
+    private bool IsViewNotiziariOn = false;
     public void RicercaNotiziari()
     {
-        if (ListViewRadio == null || !ListViewRadio.Any())
+        if(IsViewNotiziariOn == false)
         {
-            ListViewRadio = new List<Radio>();
+            if (ListViewRadio == null || !ListViewRadio.Any())
+            {
+                ListViewRadio = new List<Radio>();
+            }
+            ListViewRadio = ListRadio.FindAll(x => x.Genere == "Notiziario");
+            IsViewNotiziariOn = true;
         }
-        ListViewRadio = ListRadio.FindAll(x => x.Genere == "Notiziario");
+        else
+        {
+            ListViewRadio = ListRadio;
+        }
     }
 
+    private bool IsViewRockOn = false;
     public void RicercaRock()
     {
-        if (ListViewRadio == null || !ListViewRadio.Any())
+        if (IsViewRockOn == false)
         {
-            ListViewRadio = new List<Radio>();
+            if (ListViewRadio == null || !ListViewRadio.Any())
+            {
+                ListViewRadio = new List<Radio>();
+            }
+            ListViewRadio = ListRadio.FindAll(x => x.Genere == "ROCK");
+            IsViewRockOn = true;
         }
-        ListViewRadio = ListRadio.FindAll(x => x.Genere == "ROCK");
+        else
+        {
+            ListViewRadio = ListRadio;
+        }
     }
 
+    private bool IsViewPopolareOn = false;
     public void RicercaPopolare()
     {
-        if (ListViewRadio == null || !ListViewRadio.Any())
+        if (IsViewPopolareOn == false)
         {
-            ListViewRadio = new List<Radio>();
+            if (ListViewRadio == null || !ListViewRadio.Any())
+            {
+                ListViewRadio = new List<Radio>();
+            }
+            ListViewRadio = ListRadio.FindAll(x => x.Genere == "Popolare");
+            IsViewPopolareOn = true;
         }
-        ListViewRadio = ListRadio.FindAll(x => x.Genere == "Popolare");
+        else
+        {
+            ListViewRadio = ListRadio;
+        }        
     }
 
+    private bool IsViewPopOn = false;
     public void RicercaPop()
     {
-        if (ListViewRadio == null || !ListViewRadio.Any())
+        if (IsViewPopOn == false)
         {
-            ListViewRadio = new List<Radio>();
+            if (ListViewRadio == null || !ListViewRadio.Any())
+            {
+                ListViewRadio = new List<Radio>();
+            }
+            ListViewRadio = ListRadio.FindAll(x => x.Genere == "POP");
+            IsViewPopOn = true;
         }
-
-        ListViewRadio = ListRadio.FindAll(x => x.Genere == "POP");
+        else
+        {
+            ListViewRadio = ListRadio;
+        }
     }
 
     public void caricaGeneri() // metodo che controlla i generi presenti, e ne aggiunge nuovi nel caso non siano già presenti
